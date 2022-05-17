@@ -12,6 +12,8 @@ public class ApplicationConfig extends Application {
     public Set<Class<?>> getClasses() {
         Set<Class<?>> resource = new HashSet<Class<?>>();
         resource.add(services.UsersServices.class);
+        resource.add(services.ProductsServices.class);
+        resource.add(services.OrdersServices.class);
         return resource;
     }
 }

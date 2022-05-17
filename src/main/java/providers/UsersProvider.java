@@ -1,7 +1,7 @@
 package providers;
 
 import db.DBConnection;
-import model.Users;
+import entity.Users;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,8 +10,7 @@ import java.util.ArrayList;
 public class UsersProvider {
 
     public void create(Users user) throws SQLException {
-        String sql = "INSERT INTO usersA00369145(id, idUsers) VALUES ('$ID','$IDUSERS')";
-        sql.replace("$ID", ""+user.getId());
+        String sql = "INSERT INTO usersA00369145(idUsers) VALUES ('$IDUSERS')";
         sql.replace("$IDUSERS", user.getIdUsers());
         DBConnection connection = new DBConnection();
         connection.connect();
@@ -19,6 +18,7 @@ public class UsersProvider {
         connection.disconnect();
     }
 
+    /*
     public ArrayList<Users> getAllUsers() throws SQLException {
         ArrayList<Users> output = new ArrayList<Users>();
         String sql = "SELECT * FROM usersA00369145";
@@ -38,5 +38,5 @@ public class UsersProvider {
         connection.disconnect();
         return output;
     }
-
+*/
 }
